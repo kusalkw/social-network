@@ -5,6 +5,7 @@ const users = require('./routes/api/users')
 const profile = require('./routes/api/profile')
 
 const app = express();
+app.use(express.bodyParser())
 const mongoose = require('mongoose');
 
 const db = require('./config/keys').mongoURI
