@@ -19,6 +19,17 @@ router.post('/register', (req,res) => {
                     photo: req.body.photo,
                     password: req.body.password,
                 });
+                newUser.save(function(err, resp) {
+                    if (err) {
+                      console.log(err);
+                      res.send({
+                        message: 'something went wrong'
+                      });
+                    } else {
+                      user => res.json(user);
+                    }
+                
+                  });
             }
         })
 });
